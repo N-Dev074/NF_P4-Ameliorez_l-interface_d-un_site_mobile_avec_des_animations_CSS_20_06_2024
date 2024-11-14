@@ -1,0 +1,373 @@
+@use "../utils/variable" as *;
+@use"../utils/mixin" as *;
+@use"../utils/keyframes" as *;
+
+body {
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  font-family: $font-body;
+}
+
+section {
+  @include responsive(large) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+h1 h2 h3 {
+  font-family: "Shrikhand", serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/****************Header*************/
+Header {
+  display: flex;
+  flex-direction: column;
+}
+
+.Headers {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 3px;
+
+  @include responsive(large) {
+    box-shadow: none;
+    margin: 0px;
+    height: 96px;
+  }
+
+  &__logo {
+    padding: 15px 0px 15px 0px;
+    height: 30px;
+    position: relative;
+    margin: auto;
+
+    @include responsive(large) {
+      height: 34px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    border: none;
+    background: $white-colors;
+    display: none;
+
+  }
+
+  &__Location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $ea;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
+
+    @include responsive(large) {
+      margin: 0px;
+      box-shadow: none;
+    }
+
+    & p {
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    & i {
+      padding: 0px 10px 0px 10px;
+      color: #353535;
+    }
+  }
+}
+
+/***********************Présentation de l'entreprise*********************/
+.Headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include responsive (medium) {
+    background: $grey-colors_ligth;
+  }
+
+  & h1 {
+    text-align: center;
+    padding: 0px 25px 0px 25px;
+  }
+
+  & p {
+    text-align: center;
+    padding: 0px 25px 0px 25px;
+  }
+
+  &_btn {
+    border-style: none;
+    border-radius: 30px;
+    background-image: linear-gradient(to top, $primary-color, $secondary-color, );
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 60%;
+    cursor: pointer;
+
+    @include responsive(large) {
+      width: 15%;
+      margin-bottom: 1.81rem;
+    }
+
+    & p {
+      font-size: 14px;
+      font-weight: 500;
+      color: $white-colors;
+    }
+
+  &:hover {
+      filter: brightness(110%);
+    }
+  }
+}
+
+
+/* Section Fonctionnement*/
+
+.Fonction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include responsive(large) {
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  & i {
+    padding: 0px 20px 0px 20px;
+    color: $grey-colors;
+  }
+
+  & p {
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  &_elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    @include responsive(large) {
+      margin: auto;
+      width: 28%;
+      height: 66px;
+    }
+
+
+    &_circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      position: absolute;
+      top: 30%;
+      left: -4%;
+
+
+      &_number {
+        color: white;
+        padding: 4px 0px 0px 7px;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+/*Section Restaurant*/
+section {
+  margin: 0px 30px 0px 30px;
+}
+
+.container {
+  @include responsive(large) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & a {
+      width: 46%;
+    }
+  }
+}
+
+.card {
+  background-color: $white-colors;
+  border-radius: 20px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.2));
+  margin-bottom: 20px;
+  position: relative;
+
+  @include responsive(large) {
+    margin: 10px 0px 30px 0px;
+  }
+
+  & img {
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    height: 140px;
+  }
+
+  &_contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #333;
+
+
+
+
+    &_title {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+
+      & h3 {
+        margin: 10px 0px 0px 0px;
+      }
+
+      & p {
+        margin: 5px 0px 10px 0px;
+      }
+    }
+  }
+
+  &_text_icon {
+    background-color: $tertiary-color;
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    color: $green-colors;
+    font-weight: 500;
+    margin: 0px;
+    padding: 6px 12px 6px 12px;
+  }
+}
+
+/****************Footer******************/
+footer {
+  background-color: $black-colors;
+
+  @include responsive(large) {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 50px;
+  }
+}
+
+.footer_logo {
+  font-family: "Shrikhand", serif;
+  color: #FFFFFF;
+  padding-left: 40px;
+  margin-top: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footer_container {
+  color: $white-colors;
+
+
+  & ul {
+    list-style: none;
+
+    @include responsive(large) {
+      @include footer-row
+    }
+  }
+
+  & li {
+    margin-bottom: 8px;
+
+    @include responsive(large) {
+      margin-right: 2rem;
+    }
+  }
+
+  &_elements {
+    display: flex;
+    justify-content: flex-start;
+
+    & i {
+      margin-right: 10px;
+    }
+
+    & p {
+      margin: 0px;
+    }
+  }
+}
+
+/*****CODE LOADER*************/
+.loader {
+  background-color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-out 5.1s forwards;
+
+  &.hidden {
+    opacity: 1;
+    display: none;
+    position: none;
+  }
+}
+
+.loader_bar {
+  border: 5px solid $primary-color;
+  border-top: 5px solid $secondary-color;
+  border-bottom: 5px solid $secondary-color;
+  width: 50%;
+  height: 20px;
+  /* Placement sur la page */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  /****Activation automatique******/
+  &_animate {
+    @include bar;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    animation: loader-bar 5000ms forwards;
+  }
+}

@@ -1,0 +1,23 @@
+@use "../utils/variable" as *;
+
+.heart {
+  font-size: 24px;
+  margin-right: 20px;
+  cursor: pointer;
+  opacity: 1;
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+
+
+  .heart_b {
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    color: $secondary-color;
+    transition: color, opacity 0.8s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

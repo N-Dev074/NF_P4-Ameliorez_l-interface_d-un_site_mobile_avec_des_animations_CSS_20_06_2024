@@ -1,0 +1,336 @@
+/*Pages menu*/
+@use "../utils/variable" as *;
+@use"../utils/mixin" as *;
+
+.Headers_menu {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    width: 100%;
+}
+
+.Headers__btn_menu {
+    text-align: center;
+    background-color: white;
+    border: none;
+    font-size: 19px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+main {
+    @include responsive(large) {
+        margin-bottom: 20px;
+    }
+}
+
+.menu {
+    overflow: hidden;
+    border-radius: 50px 50px 0px 0px;
+    background-color: $white-colors ;
+    position: relative;
+    margin-top: -63px;
+
+    @include responsive(large) {
+        margin: -50px 250px 0px 250px;
+    }
+
+    &_title {
+        @include menu-title;
+        margin: 25px 0px 25px 0px;
+        width: 100%;
+        margin: auto;
+
+        @include responsive(large) {
+            width: 65%;
+        }
+    }
+}
+
+.img_restaurants {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: inherit;
+    width: 100%;
+
+    @include responsive(large) {
+        height: 450px;
+    }
+}
+
+.card_menu {
+    border-radius: 20px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.2));
+
+    &_block {
+        padding: 0px 10px;
+        opacity: 0;
+        animation: menu 2s ease-in 1s forwards;
+        animation-delay: 0s;
+
+        h2 {
+            font-weight: lighter;
+            border-bottom: 4px solid;
+            border-color: $tertiary-color;
+            width: 15%;
+
+            @include responsive(large) {
+                width: 4%;
+            }
+        }
+
+        &_contain {
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+
+            &_text {
+                width: 75%;
+                color: black;
+                white-space: nowrap;
+
+                &:hover {
+                    animation: text-reduce 2s ease-in-out forwards;
+                }
+
+                &_p {
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                &_price {
+                    width: 24%;
+                    color: black;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 30px;
+                }
+            }
+
+            &_check {
+                width: 0%;
+                font-size: 30px;
+                height: 87px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                color: white;
+                background-color: $tertiary-color;
+                transition: width 0.5s ease;
+
+                i {
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                }
+            }
+
+
+            &:hover {
+                .card_menu_block_contain_check {
+                    animation: checkvisible 1s ease-in-out forwards;
+
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &_block_a {
+        padding: 0px 10px;
+        opacity: 0;
+        animation: menu 2s ease-in 1s forwards;
+        animation-delay: 1.5s;
+
+        h2 {
+            font-weight: lighter;
+            border-bottom: 4px solid;
+            border-color: $tertiary-color;
+            width: 15%;
+
+            @include responsive(large) {
+                width: 4%;
+            }
+        }
+
+        &_contain {
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+
+            &_text {
+                width: 75%;
+                color: black;
+                white-space: nowrap;
+
+                &:hover {
+                    animation: text-reduce 2s ease-in-out forwards;
+                }
+
+                &_p {
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                &_price {
+                    width: 24%;
+                    color: black;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 30px;
+                }
+            }
+
+            &_check {
+                width: 0%;
+                font-size: 30px;
+                height: 87px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                color: white;
+                background-color: $tertiary-color;
+                transition: width 0.5s ease;
+
+                i {
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                }
+            }
+
+
+            &:hover {
+                .card_menu_block_contain_check {
+                    animation: checkvisible 1s ease-in-out forwards;
+
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &_block_b {
+        padding: 0px 10px;
+        opacity: 0;
+        animation: menu 2s ease-in 1s forwards;
+        animation-delay: 2.8s;
+
+        h2 {
+            font-weight: lighter;
+            border-bottom: 4px solid;
+            border-color: $tertiary-color;
+            width: 15%;
+
+            @include responsive(large) {
+                width: 4%;
+            }
+        }
+
+        &_contain {
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+
+            &_text {
+                width: 75%;
+                color: black;
+                white-space: nowrap;
+
+                &:hover {
+                    animation: text-reduce 2s ease-in-out forwards;
+                }
+
+                &_p {
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                &_price {
+                    width: 24%;
+                    color: black;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 30px;
+                }
+            }
+
+            &_check {
+                width: 0%;
+                font-size: 30px;
+                height: 87px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                color: white;
+                background-color: $tertiary-color;
+                transition: width 0.5s ease;
+
+                i {
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                }
+            }
+
+
+            &:hover {
+                .card_menu_block_contain_check {
+                    animation: checkvisible 1s ease-in-out forwards;
+
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.btn_center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 14px;
+
+    & a {
+        width: 50%;
+        height: 100%;
+    }
+
+    &_menu {
+        border-style: none;
+        border-radius: 30px;
+        background-image: linear-gradient(to top, #ff79da, #9356dc);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        width: 100%;
+
+
+        & p {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffff;
+        }
+    }
+}
